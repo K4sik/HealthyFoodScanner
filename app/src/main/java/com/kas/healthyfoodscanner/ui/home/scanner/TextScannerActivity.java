@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,8 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.kas.healthyfoodscanner.R;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -37,6 +41,18 @@ public class TextScannerActivity extends AppCompatActivity {
 
     private TextView textViewData;
 
+    private TextInputLayout textInputLayoutBarcode;
+
+    private TextInputLayout textInputLayoutCompanyName;
+
+    private TextInputLayout textInputLayoutProductName;
+
+    private TextInputEditText textInputEditTextBarcode;
+
+    private TextInputEditText textInputEditTextCompanyName;
+
+    private TextInputEditText textInputEditTextProductName;
+
     private Bitmap bitmap;
 
     @Override
@@ -44,7 +60,103 @@ public class TextScannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_scanner);
 
-        textViewData = findViewById(R.id.textview_data);
+        textInputLayoutBarcode = findViewById(R.id.til_barcode);
+        textInputLayoutBarcode.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
+                TextScannerActivity.this.startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        textInputEditTextBarcode = findViewById(R.id.tiet_barcode);
+        textInputEditTextBarcode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (charSequence.length() > 12){
+                    textInputLayoutBarcode.setError("No more!");
+                } else {
+                    textInputLayoutBarcode.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        textInputLayoutCompanyName = findViewById(R.id.til_company_name);
+        textInputLayoutCompanyName.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
+                TextScannerActivity.this.startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        textInputEditTextCompanyName = findViewById(R.id.tiet_company_name);
+        textInputEditTextCompanyName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (charSequence.length() > 12){
+                    textInputLayoutCompanyName.setError("No more!");
+                } else {
+                    textInputLayoutCompanyName.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        textInputLayoutProductName = findViewById(R.id.til_product_name);
+        textInputLayoutProductName.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
+                TextScannerActivity.this.startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        textInputEditTextProductName = findViewById(R.id.tiet_product_name);
+        textInputEditTextProductName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (charSequence.length() > 12){
+                    textInputLayoutProductName.setError("No more!");
+                } else {
+                    textInputLayoutProductName.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+//        textViewData = findViewById(R.id.textview_data);
 
         if (ContextCompat.checkSelfPermission(TextScannerActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(TextScannerActivity.this, new String[]{
@@ -56,7 +168,10 @@ public class TextScannerActivity extends AppCompatActivity {
             buttonCapture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(TextScannerActivity.this);
+                    Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                    buttonCapture.setText("Retake");
+                    buttonSave.setVisibility(View.VISIBLE);
+//                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(TextScannerActivity.this);
                 }
             });
 

@@ -1,52 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.home.scanner.TextScannerActivity">
 
-    <ScrollView
-        android:layout_above="@+id/linear_button_holder"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textview_data"
+        <!--    <ScrollView-->
+    <!--        android:layout_above="@+id/linear_button_holder"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:layout_marginBottom="8dp">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textview_data"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="HELLO"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="22sp" />-->
+    <!--    </ScrollView>-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_barcode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HELLO"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
-    </ScrollView>
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Barcode"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:id="@+id/linear_button_holder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/button_capture"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_barcode"
+                android:maxLength="13"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_company_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:text="Capture" />
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Company Name"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperText="Required*"
+            app:helperTextEnabled="false"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_barcode"
+            app:startIconDrawable="@drawable/ic_add">
 
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="13" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_product_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:text="Save"
-            android:visibility="gone" />
-    </LinearLayout>
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Product Name"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperText="Required*"
+            app:helperTextEnabled="false"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_company_name"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="13" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_above="@id/til_kcal"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_product_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_kcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Kcal"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_kcal"
+                android:maxLength="13"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_sugar"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Sugar"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperText="Required*"
+            app:helperTextEnabled="false"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_kcal"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_sugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="13" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_salt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Salt"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperText="Required*"
+            app:helperTextEnabled="false"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_sugar"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_salt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="13" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/linear_button_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_salt">
+
+            <Button
+                android:id="@+id/button_capture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="Capture" />
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="Save"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
