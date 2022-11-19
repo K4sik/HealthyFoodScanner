@@ -12,6 +12,7 @@ import android.text.TextWatcher;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,8 @@ public class AddProductActivity extends AppCompatActivity {
 
     private Button buttonSave;
 
+    private ImageView imageViewResult;
+
     private TextView textViewData;
 
     private TextInputLayout textInputLayoutBarcode;
@@ -59,6 +62,8 @@ public class AddProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
+
+        imageViewResult = findViewById(R.id.image_view);
 
         textInputLayoutBarcode = findViewById(R.id.til_barcode);
         textInputLayoutBarcode.setEndIconOnClickListener(new View.OnClickListener() {
@@ -197,6 +202,7 @@ public class AddProductActivity extends AppCompatActivity {
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
                     getTextFromImage(bitmap);
+                    imageViewResult.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
