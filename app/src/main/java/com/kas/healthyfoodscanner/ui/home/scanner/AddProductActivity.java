@@ -31,7 +31,7 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.IOException;
 
-public class TextScannerActivity extends AppCompatActivity {
+public class AddProductActivity extends AppCompatActivity {
 
     private static final int REQUEST_CAMERA_CODE = 100;
 
@@ -58,14 +58,14 @@ public class TextScannerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text_scanner);
+        setContentView(R.layout.activity_add_product);
 
         textInputLayoutBarcode = findViewById(R.id.til_barcode);
         textInputLayoutBarcode.setEndIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
-                TextScannerActivity.this.startActivity(intent);
+                AddProductActivity.this.startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -97,7 +97,7 @@ public class TextScannerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
-                TextScannerActivity.this.startActivity(intent);
+                AddProductActivity.this.startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -129,7 +129,7 @@ public class TextScannerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), BarcodeScannerActivity.class);
-                TextScannerActivity.this.startActivity(intent);
+                AddProductActivity.this.startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -158,8 +158,8 @@ public class TextScannerActivity extends AppCompatActivity {
 
         textViewData = findViewById(R.id.tiet_description);
 
-        if (ContextCompat.checkSelfPermission(TextScannerActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(TextScannerActivity.this, new String[]{
+        if (ContextCompat.checkSelfPermission(AddProductActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(AddProductActivity.this, new String[]{
                     Manifest.permission.CAMERA
             }, REQUEST_CAMERA_CODE);
         } else {
@@ -171,7 +171,7 @@ public class TextScannerActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
 //                    buttonCapture.setText("Retake");
 //                    buttonSave.setVisibility(View.VISIBLE);
-                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(TextScannerActivity.this);
+                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(AddProductActivity.this);
                 }
             });
 
@@ -212,7 +212,7 @@ public class TextScannerActivity extends AppCompatActivity {
     private void getTextFromImage(Bitmap bitmap){
         TextRecognizer textRecognizer = new TextRecognizer.Builder(this).build();
         if (!textRecognizer.isOperational()){
-            Toast.makeText(TextScannerActivity.this, "Error Occurred!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddProductActivity.this, "Error Occurred!!!", Toast.LENGTH_SHORT).show();
         } else {
             Frame frame = new Frame.Builder().setBitmap(bitmap).build();
             SparseArray<TextBlock> textBlockSparseArray = textRecognizer.detect(frame);
