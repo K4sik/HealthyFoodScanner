@@ -10,26 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--    <ScrollView-->
-    <!--        android:layout_above="@+id/linear_button_holder"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:layout_alignParentTop="true"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:layout_marginTop="8dp"-->
-    <!--        android:layout_marginEnd="8dp"-->
-    <!--        android:layout_marginBottom="8dp">-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/textview_data"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="HELLO"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="22sp" />-->
-    <!--    </ScrollView>-->
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_barcode"
             android:layout_width="match_parent"
@@ -137,20 +117,17 @@
             app:layout_constraintTop_toBottomOf="@+id/til_product_name" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_kcal"
+            android:id="@+id/til_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:hint="Kcal"
+            android:hint="Scanned content from image"
             app:helperTextEnabled="false"
             app:helperText="Required*"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
             app:helperTextTextColor="@color/red"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_photo_camera"
+            app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -160,8 +137,33 @@
             app:layout_constraintTop_toBottomOf="@id/image_view">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_kcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Kcal"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_description">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet_kcal"
-                android:maxLength="13"
                 android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -169,22 +171,19 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_sugar"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Sugar"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
-            app:endIconDrawable="@drawable/ic_photo_camera"
-            app:endIconMode="custom"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
-            app:helperText="Required*"
-            app:helperTextEnabled="false"
-            app:helperTextTextColor="@color/red"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_kcal"
@@ -194,28 +193,24 @@
                 android:id="@+id/tiet_sugar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="13" />
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_salt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Salt"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
-            app:endIconDrawable="@drawable/ic_photo_camera"
-            app:endIconMode="custom"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
-            app:helperText="Required*"
-            app:helperTextEnabled="false"
-            app:helperTextTextColor="@color/red"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_sugar"
@@ -225,8 +220,7 @@
                 android:id="@+id/tiet_salt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="13" />
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

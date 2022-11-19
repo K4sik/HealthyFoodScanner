@@ -156,7 +156,7 @@ public class TextScannerActivity extends AppCompatActivity {
             }
         });
 
-//        textViewData = findViewById(R.id.textview_data);
+        textViewData = findViewById(R.id.tiet_description);
 
         if (ContextCompat.checkSelfPermission(TextScannerActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(TextScannerActivity.this, new String[]{
@@ -169,9 +169,9 @@ public class TextScannerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
-                    buttonCapture.setText("Retake");
-                    buttonSave.setVisibility(View.VISIBLE);
-//                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(TextScannerActivity.this);
+//                    buttonCapture.setText("Retake");
+//                    buttonSave.setVisibility(View.VISIBLE);
+                    CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(TextScannerActivity.this);
                 }
             });
 
