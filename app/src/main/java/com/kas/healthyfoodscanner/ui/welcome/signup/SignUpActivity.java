@@ -1,4 +1,4 @@
-package com.kas.healthyfoodscanner.ui.welcome.signin;
+package com.kas.healthyfoodscanner.ui.welcome.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.kas.healthyfoodscanner.R;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_up);
     }
 }
