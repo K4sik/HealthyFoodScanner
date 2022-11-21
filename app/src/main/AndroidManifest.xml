@@ -21,7 +21,14 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ui.welcome.login.LogInActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
