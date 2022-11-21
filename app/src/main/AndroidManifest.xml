@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -21,27 +21,33 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
+            android:name=".WelcomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.home.scanner.AddProductActivity"
-            android:label="@string/add_new_product_title"
-            android:exported="false" >
+            android:exported="false"
+            android:label="@string/add_new_product_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ui.home.scanner.BarcodeScannerActivity"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-        </activity>
-<!--        <activity-->
-<!--            android:name=".ui.home.scanner.Lol_kek_Activity"-->
-<!--            android:exported="false" >-->
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value=".MainActivity" />-->
-<!--        </activity>-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".ui.home.scanner.Lol_kek_Activity" -->
+        <!-- android:exported="false" > -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value=".MainActivity" /> -->
+        <!-- </activity> -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
