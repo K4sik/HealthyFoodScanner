@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.kas.healthyfoodscanner.MainActivity;
 import com.kas.healthyfoodscanner.R;
+import com.kas.healthyfoodscanner.ui.welcome.signup.SignUpActivity;
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class LogInActivity extends AppCompatActivity {
     private TextInputEditText password;
 
     private Button loginBtn;
+
+    private TextView signUpTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,11 @@ public class LogInActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error enter valid Username and Password!", Toast.LENGTH_SHORT).show();
             }
 
+        });
 
+        signUpTv = findViewById(R.id.sign_up_tv);
+        signUpTv.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
         });
 
     }
