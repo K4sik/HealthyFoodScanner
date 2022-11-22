@@ -10,9 +10,18 @@
     <string name="log_in">Login</string>
     <string name="sign_up">Sign Up</string>
 
+    <string name="forgot_your_password">Forgot your password?p</string>
+
+    <string name="sign_up_tv">
+        <u>Sign Up</u>
+    </string>
+
+    <string name="or">or</string>
+
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_write_to_us">Write to Us</string>
+    <string name="menu_rate_us">Rate Us on App store</string>
+    <string name="menu_about_us">About Us</string>
 
     <string name="add_new_product_title">Add new Product</string>
 </resources>
