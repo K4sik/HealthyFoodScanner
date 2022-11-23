@@ -50,8 +50,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Company Name"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
             app:endIconDrawable="@drawable/ic_photo_camera"
             app:endIconMode="custom"
             app:errorEnabled="true"
@@ -67,9 +65,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet_company_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="13" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,8 +77,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Product Name"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
             app:endIconDrawable="@drawable/ic_photo_camera"
             app:endIconMode="custom"
             app:errorEnabled="true"
@@ -98,9 +92,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet_product_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="13" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
