@@ -27,6 +27,7 @@ import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.kas.healthyfoodscanner.R;
+import com.kas.healthyfoodscanner.ui.database.DatabaseHelper;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -42,19 +43,27 @@ public class AddProductActivity extends AppCompatActivity {
 
     private ImageView imageViewResult;
 
-    private TextView textViewData;
-
     private TextInputLayout textInputLayoutBarcode;
 
     private TextInputLayout textInputLayoutCompanyName;
 
     private TextInputLayout textInputLayoutProductName;
 
+    private TextInputLayout textInputLayoutDescription;
+
     private TextInputEditText textInputEditTextBarcode;
 
     private TextInputEditText textInputEditTextCompanyName;
 
     private TextInputEditText textInputEditTextProductName;
+
+    private TextInputEditText textInputEditTextDescription;
+
+    private TextInputEditText textInputEditTextKcal;
+
+    private TextInputEditText textInputEditTextSugar;
+
+    private TextInputEditText textInputEditTextSalt;
 
     private Bitmap bitmap;
 
@@ -161,7 +170,13 @@ public class AddProductActivity extends AppCompatActivity {
             }
         });
 
-        textViewData = findViewById(R.id.tiet_description);
+        textInputEditTextDescription = findViewById(R.id.tiet_description);
+
+        textInputEditTextKcal = findViewById(R.id.tiet_kcal);
+
+        textInputEditTextSugar = findViewById(R.id.tiet_sugar);
+
+        textInputEditTextSalt = findViewById(R.id.tiet_salt);
 
         if (ContextCompat.checkSelfPermission(AddProductActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(AddProductActivity.this, new String[]{
@@ -184,7 +199,15 @@ public class AddProductActivity extends AppCompatActivity {
             buttonSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    DatabaseHelper databaseHelper = new DatabaseHelper(AddProductActivity.this);
+                    databaseHelper.addProduct(textInputEditTextBarcode.getText().toString(),
+                            textInputEditTextCompanyName.getText().toString(),
+                            textInputEditTextProductName.getText().toString(),
+                            textInputEditTextDescription.getText().toString(),
+                            Integer.valueOf(textInputEditTextKcal.getText().toString()),
+                            Integer.valueOf(textInputEditTextSugar.getText().toString()),
+                            Integer.valueOf(textInputEditTextSalt.getText().toString())
+                            );
                 }
             });
 
@@ -229,7 +252,7 @@ public class AddProductActivity extends AppCompatActivity {
                 stringBuilder.append(textBlock.getValue());
                 stringBuilder.append("\n");
             }
-            textViewData.setText(stringBuilder.toString());
+            textInputEditTextDescription.setText(stringBuilder.toString());
             buttonCapture.setText("Retake");
             buttonSave.setVisibility(View.VISIBLE);
         }
