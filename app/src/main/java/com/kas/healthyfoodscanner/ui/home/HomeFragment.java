@@ -34,6 +34,7 @@ public class HomeFragment extends Fragment {
         pageList.add(new Page(R.drawable.camera, "Scan Barcode", R.drawable.ic_arrow_right));
         pageList.add(new Page(R.drawable.map, "Add new Product", R.drawable.ic_arrow_right));
         pageList.add(new Page(R.drawable.person, "Profile", R.drawable.ic_arrow_right));
+        pageList.add(new Page(R.drawable.ic_shopping_cart, "Product", R.drawable.ic_arrow_right));
 
         RecyclerView recyclerView = root.findViewById(R.id.home_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
