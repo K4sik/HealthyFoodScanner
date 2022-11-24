@@ -23,5 +23,8 @@
     <string name="menu_rate_us">Rate Us on App store</string>
     <string name="menu_about_us">About Us</string>
 
+    <string name="result_by_barcode">Product</string>
     <string name="add_new_product_title">Add new Product</string>
+    <string name="products">Products</string>
+    <string name="search">Search</string>
 </resources>
