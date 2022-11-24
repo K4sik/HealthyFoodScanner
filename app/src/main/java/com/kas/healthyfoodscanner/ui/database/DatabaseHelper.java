@@ -83,4 +83,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getProductByBarcode(long barcode){
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + barcode;
+
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
 }
