@@ -1,118 +1,372 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.scanner.ResultScanActivity">
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/barcode_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="barcode"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
-
-    <TextView
-        android:id="@+id/company_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Company Name"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
-
-    <TextView
-        android:id="@+id/product_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Product Name"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
-
-    <ImageView
-        android:id="@+id/product_iv"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/ingredients_tv"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="201dp"
-        android:hint="Ingredients"
-        android:text="Ingredients"
-        android:textColor="@color/black"
-        android:layout_marginRight="32dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
-
-    <TextView
-        android:id="@+id/salt_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salt"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
-
-    <TextView
-        android:id="@+id/kcal_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kcal"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
-
-    <TextView
-        android:id="@+id/sugar_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sugar"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        android:layout_height="match_parent"
+        tools:context=".ui.home.scanner.ResultScanActivity">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/barcode_tv"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="barcode"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_name_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/barcode_tv2"
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="№"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/barcode_tv"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_name_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/company_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Company Name"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_name_tv"
+            app:layout_constraintVertical_bias="0.028"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/product_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="Product Name"
+            android:textSize="24dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.037" />
+
+        <ImageView
+            android:id="@+id/product_iv"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barcode_tv2" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:text="Ingredients"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_iv" />
+
+        <TextView
+            android:id="@+id/ingredients_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:hint="Ingredients"
+            android:textColor="@color/black"
+            android:background="@drawable/ingredients_layout"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <ImageView
+            android:id="@+id/kcal_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/kcal_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kcal"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/kcal_iv"
+            app:layout_constraintEnd_toEndOf="@+id/kcal_iv"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/kcal_iv"
+            app:layout_constraintTop_toTopOf="@+id/kcal_iv"
+            app:layout_constraintVertical_bias="0.229" />
+
+        <TextView
+            android:id="@+id/kcal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Kcal"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/kcal_iv"
+            app:layout_constraintEnd_toEndOf="@+id/kcal_iv"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/kcal_iv"
+            app:layout_constraintTop_toBottomOf="@+id/kcal_tv_static"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <ImageView
+            android:id="@+id/sugar_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/salt_iv"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toEndOf="@+id/kcal_iv"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/sugar_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugar"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/sugar_iv"
+            app:layout_constraintEnd_toEndOf="@+id/sugar_iv"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="@+id/sugar_iv"
+            app:layout_constraintTop_toTopOf="@+id/sugar_iv"
+            app:layout_constraintVertical_bias="0.213" />
+
+        <TextView
+            android:id="@+id/sugar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sugar"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/sugar_iv"
+            app:layout_constraintEnd_toEndOf="@+id/sugar_iv"
+            app:layout_constraintStart_toStartOf="@+id/sugar_iv"
+            app:layout_constraintTop_toBottomOf="@+id/sugar_tv_static" />
+
+
+        <ImageView
+            android:id="@+id/salt_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/salt_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salt"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/salt_iv"
+            app:layout_constraintEnd_toEndOf="@+id/salt_iv"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/salt_iv"
+            app:layout_constraintTop_toTopOf="@+id/salt_iv"
+            app:layout_constraintVertical_bias="0.196" />
+
+        <TextView
+            android:id="@+id/salt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salt"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/salt_iv"
+            app:layout_constraintEnd_toEndOf="@+id/salt_iv"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/salt_iv"
+            app:layout_constraintTop_toBottomOf="@+id/salt_tv_static"
+            app:layout_constraintVertical_bias="0.533" />
+
+
+
+
+        <ImageView
+            android:id="@+id/whites_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kcal_iv"
+            app:layout_constraintVertical_bias="0.032" />
+
+        <TextView
+            android:id="@+id/whites_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whites"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/whites_iv"
+            app:layout_constraintEnd_toEndOf="@+id/whites_iv"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/whites_iv"
+            app:layout_constraintTop_toTopOf="@+id/whites_iv"
+            app:layout_constraintVertical_bias="0.229" />
+
+        <TextView
+            android:id="@+id/whites_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Whites"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/whites_iv"
+            app:layout_constraintEnd_toEndOf="@+id/whites_iv"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/whites_iv"
+            app:layout_constraintTop_toBottomOf="@+id/whites_tv_static"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <ImageView
+            android:id="@+id/fat_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/carbohydrates_iv"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toEndOf="@+id/whites_iv"
+            app:layout_constraintTop_toBottomOf="@+id/sugar_iv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/fat_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sat Fat"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/fat_iv"
+            app:layout_constraintEnd_toEndOf="@+id/fat_iv"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="@+id/fat_iv"
+            app:layout_constraintTop_toTopOf="@+id/fat_iv"
+            app:layout_constraintVertical_bias="0.213" />
+
+        <TextView
+            android:id="@+id/fat_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fat Fat"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/fat_iv"
+            app:layout_constraintEnd_toEndOf="@+id/fat_iv"
+            app:layout_constraintStart_toStartOf="@+id/fat_iv"
+            app:layout_constraintTop_toBottomOf="@+id/fat_tv_static" />
+
+        <ImageView
+            android:id="@+id/carbohydrates_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/green_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/salt_iv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/carbohydrates_tv_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbohydrates"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/carbohydrates_iv"
+            app:layout_constraintEnd_toEndOf="@+id/carbohydrates_iv"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="@+id/carbohydrates_iv"
+            app:layout_constraintTop_toTopOf="@+id/carbohydrates_iv"
+            app:layout_constraintVertical_bias="0.272" />
+
+        <TextView
+            android:id="@+id/carbohydrates_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/carbohydrates_iv"
+            app:layout_constraintEnd_toEndOf="@+id/carbohydrates_iv"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/carbohydrates_iv"
+            app:layout_constraintTop_toBottomOf="@+id/carbohydrates_tv_static"
+            app:layout_constraintVertical_bias="0.533" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

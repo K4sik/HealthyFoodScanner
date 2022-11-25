@@ -142,9 +142,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Kcal"
-            app:helperTextEnabled="false"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
@@ -169,9 +166,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Sugar"
-            app:helperTextEnabled="false"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
@@ -196,9 +190,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="Salt"
-            app:helperTextEnabled="false"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error"
@@ -215,6 +206,87 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_whites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Whites"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_salt"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_whites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_fat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Sat Fat"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_whites"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_fat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_carbohydrates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Carbohydrates"
+            app:helperTextEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_fat"
+            app:startIconDrawable="@drawable/ic_add">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_carbohydrates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
             android:id="@+id/linear_button_holder"
@@ -224,7 +296,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_salt">
+            app:layout_constraintTop_toBottomOf="@id/til_carbohydrates">
 
             <Button
                 android:id="@+id/button_capture"
@@ -240,8 +312,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Save"
-                android:visibility="gone" />
+                android:text="Save" />
         </LinearLayout>
 
 

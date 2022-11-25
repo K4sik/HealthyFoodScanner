@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +27,31 @@ public class ResultScanActivity extends AppCompatActivity {
 
     private TextView saltTv;
 
+    private TextView whitesTv;
+
+    private TextView satFatTv;
+
+    private TextView carbohydratesTv;
+
+    private ImageView kcalIv;
+
+    private ImageView sugarIv;
+
+    private ImageView saltIv;
+
+    private ImageView whitesIv;
+
+    private ImageView satFatIv;
+
+    private ImageView carbohydratesIv;
+
     private DatabaseHelper databaseHelper;
+
+    private int danger = 0;
+
+    private int warning = 0;
+
+    private int allowed = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +65,22 @@ public class ResultScanActivity extends AppCompatActivity {
         kcalTv = findViewById(R.id.kcal_tv);
         sugarTv = findViewById(R.id.sugar_tv);
         saltTv = findViewById(R.id.salt_tv);
+        whitesTv = findViewById(R.id.whites_tv);
+        satFatTv = findViewById(R.id.fat_tv);
+        carbohydratesTv = findViewById(R.id.carbohydrates_tv);
+        kcalIv = findViewById(R.id.kcal_iv);
+        sugarIv = findViewById(R.id.sugar_iv);
+        saltIv = findViewById(R.id.salt_iv);
+        whitesIv = findViewById(R.id.whites_iv);
+        satFatIv = findViewById(R.id.fat_iv);
+        carbohydratesIv = findViewById(R.id.carbohydrates_iv);
 
-        Bundle extras = getIntent().getExtras();
-
-        if (extras != null) {
-            String barcode = extras.getString("barcode");
+//        Bundle extras = getIntent().getExtras();
+//
+//        if (extras != null) {
+//            String barcode = extras.getString("barcode");
+            String barcode = "987654321098";
+//            String barcode = "4823000913691";
 
             databaseHelper = new DatabaseHelper(ResultScanActivity.this);
             Cursor cursor = databaseHelper.getProductByBarcode(Long.valueOf(barcode));
@@ -56,17 +92,97 @@ public class ResultScanActivity extends AppCompatActivity {
                 System.out.println("Company name = No data");
             } else {
                 barcodeTv.setText(barcode);
-                companyNameTv.setText(cursor.getString(1));
+//                companyNameTv.setText(cursor.getString(1));
                 productNameTv.setText(cursor.getString(2));
+                productNameTv.append("(" + cursor.getString(1) + ")");
                 ingredientsTv.setText(cursor.getString(3));
                 kcalTv.setText(cursor.getString(4));
                 sugarTv.setText(cursor.getString(5));
                 saltTv.setText(cursor.getString(6));
+                whitesTv.setText(cursor.getString(7));
+                satFatTv.setText(cursor.getString(8));
+                carbohydratesTv.setText(cursor.getString(9));
+
+                if (Integer.valueOf(cursor.getString(4)) > 100 && Integer.valueOf(cursor.getString(4)) <= 500) {
+                    kcalIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(4)) > 500){
+                    kcalIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    kcalIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (Integer.valueOf(cursor.getString(5)) > 100 && Integer.valueOf(cursor.getString(5)) <= 500) {
+                    sugarIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(5)) > 500) {
+                    sugarIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    sugarIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (Integer.valueOf(cursor.getString(6)) > 100 && Integer.valueOf(cursor.getString(6)) <= 500) {
+                    saltIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(6)) > 500) {
+                    saltIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    saltIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (Integer.valueOf(cursor.getString(7)) > 100 && Integer.valueOf(cursor.getString(7)) <= 500) {
+                    whitesIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(7)) > 500){
+                    whitesIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    whitesIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (Integer.valueOf(cursor.getString(8)) > 100 && Integer.valueOf(cursor.getString(8)) <= 500) {
+                    satFatIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(8)) > 500) {
+                    satFatIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    satFatIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (Integer.valueOf(cursor.getString(9)) > 100 && Integer.valueOf(cursor.getString(9)) <= 500) {
+                    carbohydratesIv.setImageResource(R.drawable.yellow_result);
+                    warning++;
+                } else if (Integer.valueOf(cursor.getString(9)) > 500) {
+                    carbohydratesIv.setImageResource(R.drawable.red_result);
+                    danger++;
+                } else {
+                    carbohydratesIv.setImageResource(R.drawable.green_result);
+                    allowed++;
+                }
+
+                if (danger >= warning && danger >= allowed) {
+                    System.out.println("DANGER");
+                } else if (warning > danger && warning >= allowed) {
+                    System.out.println("WARNING");
+                } else {
+                    System.out.println("ALLOWED");
+                }
+
+
             }
 
-        } else {
-            Toast.makeText(ResultScanActivity.this, "Barcode not found", Toast.LENGTH_SHORT).show();
-        }
+//        } else {
+//            Toast.makeText(ResultScanActivity.this, "Barcode not found", Toast.LENGTH_SHORT).show();
+//        }
     }
 
 }

@@ -65,6 +65,12 @@ public class AddProductActivity extends AppCompatActivity {
 
     private TextInputEditText textInputEditTextSalt;
 
+    private TextInputEditText textInputEditTextWhites;
+
+    private TextInputEditText textInputEditTextSatFat;
+
+    private TextInputEditText textInputEditTextCarbohydrates;
+
     private Bitmap bitmap;
 
     @Override
@@ -125,11 +131,11 @@ public class AddProductActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-                if (charSequence.length() > 12){
-                    textInputLayoutCompanyName.setError("No more!");
-                } else {
-                    textInputLayoutCompanyName.setError(null);
-                }
+//                if (charSequence.length() > 12){
+//                    textInputLayoutCompanyName.setError("No more!");
+//                } else {
+//                    textInputLayoutCompanyName.setError(null);
+//                }
             }
 
             @Override
@@ -157,11 +163,11 @@ public class AddProductActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-                if (charSequence.length() > 12){
-                    textInputLayoutProductName.setError("No more!");
-                } else {
-                    textInputLayoutProductName.setError(null);
-                }
+//                if (charSequence.length() > 12){
+//                    textInputLayoutProductName.setError("No more!");
+//                } else {
+//                    textInputLayoutProductName.setError(null);
+//                }
             }
 
             @Override
@@ -177,6 +183,12 @@ public class AddProductActivity extends AppCompatActivity {
         textInputEditTextSugar = findViewById(R.id.tiet_sugar);
 
         textInputEditTextSalt = findViewById(R.id.tiet_salt);
+
+        textInputEditTextWhites = findViewById(R.id.tiet_whites);
+
+        textInputEditTextSatFat = findViewById(R.id.tiet_fat);
+
+        textInputEditTextCarbohydrates = findViewById(R.id.tiet_carbohydrates);
 
         if (ContextCompat.checkSelfPermission(AddProductActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(AddProductActivity.this, new String[]{
@@ -206,7 +218,10 @@ public class AddProductActivity extends AppCompatActivity {
                             textInputEditTextDescription.getText().toString(),
                             Integer.valueOf(textInputEditTextKcal.getText().toString()),
                             Integer.valueOf(textInputEditTextSugar.getText().toString()),
-                            Integer.valueOf(textInputEditTextSalt.getText().toString())
+                            Integer.valueOf(textInputEditTextSalt.getText().toString()),
+                            Integer.valueOf(textInputEditTextWhites.getText().toString()),
+                            Integer.valueOf(textInputEditTextSatFat.getText().toString()),
+                            Integer.valueOf(textInputEditTextCarbohydrates.getText().toString())
                             );
                 }
             });
