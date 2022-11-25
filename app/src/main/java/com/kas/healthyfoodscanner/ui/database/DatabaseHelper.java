@@ -52,8 +52,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-//        onCreate(sqLiteDatabase);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(sqLiteDatabase);
     }
 
     public void addProduct(String barcode, String company_name, String product_name, String ingredients, int kcal, int sugar, int salt, int whites, int fat, int carbohydrates) {
