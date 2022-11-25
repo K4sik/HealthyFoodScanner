@@ -22,6 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_KCAL = "_kcal";
     private static final String COLUMN_SUGAR = "_sugar";
     private static final String COLUMN_SALT = "_salt";
+    private static final String COLUMN_WHITES = "_whites";
+    private static final String COLUMN_FAT = "_fat";
+    private static final String COLUMN_CARBOHYDRATES = "_carbohydrates";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,7 +41,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_INGREDIENTS + " TEXT, " +
                 COLUMN_KCAL + " INTEGER, " +
                 COLUMN_SUGAR + " INTEGER, " +
-                COLUMN_SALT + " INTEGER);";
+                COLUMN_SALT + " INTEGER, " +
+                COLUMN_WHITES + " INTEGER, " +
+                COLUMN_FAT + " INTEGER, " +
+                COLUMN_CARBOHYDRATES + " INTEGER);";
 
         sqLiteDatabase.execSQL(query);
 
@@ -50,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        onCreate(sqLiteDatabase);
     }
 
-    public void addProduct(String barcode, String company_name, String product_name, String ingredients, int kcal, int sugar, int salt) {
+    public void addProduct(String barcode, String company_name, String product_name, String ingredients, int kcal, int sugar, int salt, int whites, int fat, int carbohydrates) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -61,6 +67,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_KCAL, kcal);
         contentValues.put(COLUMN_SUGAR, sugar);
         contentValues.put(COLUMN_SALT, salt);
+        contentValues.put(COLUMN_WHITES, whites);
+        contentValues.put(COLUMN_FAT, fat);
+        contentValues.put(COLUMN_CARBOHYDRATES, carbohydrates);
 
         long result = database.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
