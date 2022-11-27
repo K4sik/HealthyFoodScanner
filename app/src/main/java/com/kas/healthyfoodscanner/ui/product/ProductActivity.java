@@ -1,4 +1,4 @@
-package com.kas.healthyfoodscanner.ui.products;
+package com.kas.healthyfoodscanner.ui.product;
 
 import android.database.Cursor;
 import android.os.Bundle;

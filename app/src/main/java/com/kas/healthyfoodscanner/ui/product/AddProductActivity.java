@@ -1,4 +1,4 @@
-package com.kas.healthyfoodscanner.ui.home.scanner;
+package com.kas.healthyfoodscanner.ui.product;
 
 import android.Manifest;
 import android.content.Intent;
@@ -13,7 +13,6 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -26,8 +25,10 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.kas.healthyfoodscanner.MainActivity;
 import com.kas.healthyfoodscanner.R;
 import com.kas.healthyfoodscanner.ui.database.DatabaseHelper;
+import com.kas.healthyfoodscanner.ui.home.scanner.BarcodeScannerActivity;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -223,6 +224,7 @@ public class AddProductActivity extends AppCompatActivity {
                             Integer.valueOf(textInputEditTextSatFat.getText().toString()),
                             Integer.valueOf(textInputEditTextCarbohydrates.getText().toString())
                             );
+                    startActivity(new Intent(AddProductActivity.this, MainActivity.class));
                 }
             });
 

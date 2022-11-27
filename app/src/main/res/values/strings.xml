@@ -25,6 +25,7 @@
 
     <string name="result_by_barcode">Product</string>
     <string name="add_new_product_title">Add new Product</string>
+    <string name="update_product_title">Update Product</string>
     <string name="products">Products</string>
     <string name="search">Search</string>
 </resources>

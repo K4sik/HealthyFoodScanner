@@ -13,10 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kas.healthyfoodscanner.R;
-import com.kas.healthyfoodscanner.ui.home.scanner.BarcodeScannerActivity;
-import com.kas.healthyfoodscanner.ui.home.scanner.AddProductActivity;
+import com.kas.healthyfoodscanner.ui.product.AddProductActivity;
 import com.kas.healthyfoodscanner.ui.home.scanner.ResultScanActivity;
-import com.kas.healthyfoodscanner.ui.products.ProductActivity;
+import com.kas.healthyfoodscanner.ui.product.ProductActivity;
 
 import java.util.List;
 

@@ -104,4 +104,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void updateProduct(String row_id, String barcode, String company_name, String product_name, String ingredients, int kcal, int sugar, int salt, int whites, int fat, int carbohydrates){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COLUMN_ID, barcode);
+        contentValues.put(COLUMN_COMPANY_NAME, company_name);
+        contentValues.put(COLUMN_PRODUCT_NAME, product_name);
+        contentValues.put(COLUMN_INGREDIENTS, ingredients);
+        contentValues.put(COLUMN_KCAL, kcal);
+        contentValues.put(COLUMN_SUGAR, sugar);
+        contentValues.put(COLUMN_SALT, salt);
+        contentValues.put(COLUMN_WHITES, whites);
+        contentValues.put(COLUMN_FAT, fat);
+        contentValues.put(COLUMN_CARBOHYDRATES, carbohydrates);
+
+        long result = db.update(TABLE_NAME, contentValues, "_barcode=?", new String[]{row_id});
+        if (result == -1) {
+            Toast.makeText(context, "Failed to Update!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

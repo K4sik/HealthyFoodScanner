@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.product.AddProductActivity">
+    tools:context=".ui.product.UpdateProductActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_barcode"
+            android:id="@+id/til_barcode_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_barcode"
+                android:id="@+id/tiet_barcode_update"
                 android:maxLength="13"
                 android:inputType="number"
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_company_name"
+            android:id="@+id/til_company_name_update"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,17 +59,17 @@
             app:helperTextTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_barcode"
+            app:layout_constraintTop_toBottomOf="@+id/til_barcode_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_company_name"
+                android:id="@+id/tiet_company_name_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_product_name"
+            android:id="@+id/til_product_name_update"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,30 +86,30 @@
             app:helperTextTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_company_name"
+            app:layout_constraintTop_toBottomOf="@+id/til_company_name_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_product_name"
+                android:id="@+id/tiet_product_name_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
-            android:id="@+id/image_view"
+            android:id="@+id/image_view_update"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_above="@id/til_kcal"
+            android:layout_above="@id/til_kcal_update"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_product_name" />
+            app:layout_constraintTop_toBottomOf="@+id/til_product_name_update" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_description"
+            android:id="@+id/til_description_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -126,16 +126,16 @@
             app:startIconDrawable="@drawable/ic_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_view">
+            app:layout_constraintTop_toBottomOf="@id/image_view_update">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_description"
+                android:id="@+id/tiet_description_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_kcal"
+            android:id="@+id/til_kcal_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -149,17 +149,17 @@
             app:startIconDrawable="@drawable/ic_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_description">
+            app:layout_constraintTop_toBottomOf="@id/til_description_update">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_kcal"
+                android:id="@+id/tiet_kcal_update"
                 android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_sugar"
+            android:id="@+id/til_sugar_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -172,18 +172,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_kcal"
+            app:layout_constraintTop_toBottomOf="@+id/til_kcal_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_sugar"
+                android:id="@+id/tiet_sugar_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_salt"
+            android:id="@+id/til_salt_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -196,18 +196,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_sugar"
+            app:layout_constraintTop_toBottomOf="@+id/til_sugar_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_salt"
+                android:id="@+id/tiet_salt_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_whites"
+            android:id="@+id/til_whites_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -223,18 +223,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_salt"
+            app:layout_constraintTop_toBottomOf="@+id/til_salt_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_whites"
+                android:id="@+id/tiet_whites_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_fat"
+            android:id="@+id/til_fat_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -250,18 +250,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_whites"
+            app:layout_constraintTop_toBottomOf="@+id/til_whites_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_fat"
+                android:id="@+id/tiet_fat_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_carbohydrates"
+            android:id="@+id/til_carbohydrates_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -277,11 +277,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_fat"
+            app:layout_constraintTop_toBottomOf="@+id/til_fat_update"
             app:startIconDrawable="@drawable/ic_add">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiet_carbohydrates"
+                android:id="@+id/tiet_carbohydrates_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
@@ -289,17 +289,17 @@
 
 
         <LinearLayout
-            android:id="@+id/linear_button_holder"
+            android:id="@+id/linear_button_holder_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_carbohydrates">
+            app:layout_constraintTop_toBottomOf="@id/til_carbohydrates_update">
 
             <Button
-                android:id="@+id/button_capture"
+                android:id="@+id/button_capture_update"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -307,12 +307,12 @@
                 android:text="Capture" />
 
             <Button
-                android:id="@+id/button_save"
+                android:id="@+id/button_update"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Save" />
+                android:text="Update" />
         </LinearLayout>
 
 

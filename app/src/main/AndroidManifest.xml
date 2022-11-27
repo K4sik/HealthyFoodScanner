@@ -21,6 +21,15 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
+            android:name=".ui.product.UpdateProductActivity"
+            android:exported="false"
+            android:label="@string/update_product_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false"
             android:label="@string/search"
@@ -30,7 +39,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.products.ProductActivity"
+            android:name=".ui.product.ProductActivity"
             android:exported="false"
             android:label="@string/products"
             android:parentActivityName=".MainActivity">
@@ -79,7 +88,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.home.scanner.AddProductActivity"
+            android:name=".ui.product.AddProductActivity"
             android:exported="false"
             android:label="@string/add_new_product_title">
             <meta-data

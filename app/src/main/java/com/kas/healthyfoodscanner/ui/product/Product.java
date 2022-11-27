@@ -1,4 +1,4 @@
-package com.kas.healthyfoodscanner.ui.database;
+package com.kas.healthyfoodscanner.ui.product;
 
 public class Product {
 
