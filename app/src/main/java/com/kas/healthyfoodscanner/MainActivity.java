@@ -1,5 +1,6 @@
 package com.kas.healthyfoodscanner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -32,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent mailIntent = new Intent(Intent.ACTION_SEND);
+                mailIntent.setType("text/plain");
+                mailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { "roman.kasarab.pz.2018@lpnu.ua" });
+                mailIntent.putExtra(Intent.EXTRA_SUBJECT, "Application");
+                mailIntent.putExtra(Intent.EXTRA_TEXT, "Best app :)");
+
+                startActivity(Intent.createChooser(mailIntent, "Send Email"));
             }
         });
         DrawerLayout drawer = binding.drawerLayout;

@@ -30,8 +30,8 @@ public class WriteToUsFragment extends Fragment {
         Intent mailIntent = new Intent(Intent.ACTION_SEND);
         mailIntent.setType("text/plain");
         mailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { "roman.kasarab.pz.2018@lpnu.ua" });
-        mailIntent.putExtra(Intent.EXTRA_SUBJECT, "Lingo");
-        mailIntent.putExtra(Intent.EXTRA_TEXT, "Best app for learn English :)");
+        mailIntent.putExtra(Intent.EXTRA_SUBJECT, "Application");
+        mailIntent.putExtra(Intent.EXTRA_TEXT, "Best app :)");
 
         startActivity(Intent.createChooser(mailIntent, "Send Email"));
 
