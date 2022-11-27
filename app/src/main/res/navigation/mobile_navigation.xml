@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/nav_about_us"
-        android:name="com.kas.healthyfoodscanner.ui.slideshow.RateUsOnGooglePlay"
+        android:name="com.kas.healthyfoodscanner.ui.about.AboutUsFragment"
         android:label="@string/menu_about_us"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_about_us" />
 </navigation>
