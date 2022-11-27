@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,8 @@ public class ResultScanActivity extends AppCompatActivity {
 
     private ImageView carbohydratesIv;
 
+    private Button checkProductButton;
+
     private DatabaseHelper databaseHelper;
 
     private int danger = 0;
@@ -74,6 +77,7 @@ public class ResultScanActivity extends AppCompatActivity {
         whitesIv = findViewById(R.id.whites_iv);
         satFatIv = findViewById(R.id.fat_iv);
         carbohydratesIv = findViewById(R.id.carbohydrates_iv);
+        checkProductButton = findViewById(R.id.check_product_button);
 
 //        Bundle extras = getIntent().getExtras();
 //
@@ -169,14 +173,15 @@ public class ResultScanActivity extends AppCompatActivity {
                     allowed++;
                 }
 
-                if (danger >= warning && danger >= allowed) {
-                    System.out.println("DANGER");
-                } else if (warning > danger && warning >= allowed) {
-                    System.out.println("WARNING");
-                } else {
-                    System.out.println("ALLOWED");
-                }
-
+                checkProductButton.setOnClickListener(view -> {
+                    if (danger >= warning && danger >= allowed) {
+                    Toast.makeText(this, "This product is Danger for your health!\nWe don't recommend you eat it!", Toast.LENGTH_LONG).show();
+                    } else if (warning > danger && warning >= allowed) {
+                        Toast.makeText(this, "This product isn't Good for your health!\nНou can eat it at your own risk!", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(this, "This product is Good for your health!", Toast.LENGTH_LONG).show();
+                    }
+                });
 
             }
 
