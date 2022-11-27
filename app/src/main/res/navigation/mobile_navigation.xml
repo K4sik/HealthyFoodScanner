@@ -14,19 +14,19 @@
 
     <fragment
         android:id="@+id/nav_write_to_us"
-        android:name="com.kas.healthyfoodscanner.ui.gallery.GalleryFragment"
+        android:name="com.kas.healthyfoodscanner.ui.gallery.WriteToUsFragment"
         android:label="@string/menu_write_to_us"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_rate_us"
-        android:name="com.kas.healthyfoodscanner.ui.slideshow.SlideshowFragment"
+        android:name="com.kas.healthyfoodscanner.ui.slideshow.RateUsOnGooglePlay"
         android:label="@string/menu_rate_us"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_about_us"
-        android:name="com.kas.healthyfoodscanner.ui.slideshow.SlideshowFragment"
+        android:name="com.kas.healthyfoodscanner.ui.slideshow.RateUsOnGooglePlay"
         android:label="@string/menu_about_us"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
