@@ -19,12 +19,12 @@ public class ProductActivity extends AppCompatActivity {
     private RecyclerView search_rv;
     private DatabaseHelper databaseHelper;
     private List<String> barcode, companyName, productName;
-    private ProductAdapter searchAdapter;
+    private ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_product);
 
         search_rv = findViewById(R.id.search_rv);
 
@@ -35,8 +35,8 @@ public class ProductActivity extends AppCompatActivity {
 
         parseAllProducts();
 
-        searchAdapter = new ProductAdapter(ProductActivity.this, barcode, companyName, productName);
-        search_rv.setAdapter(searchAdapter);
+        productAdapter = new ProductAdapter(ProductActivity.this, barcode, companyName, productName);
+        search_rv.setAdapter(productAdapter);
         search_rv.setLayoutManager(new LinearLayoutManager(ProductActivity.this));
     }
 
