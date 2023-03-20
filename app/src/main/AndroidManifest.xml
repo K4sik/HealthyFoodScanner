@@ -21,6 +21,15 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.PopUpAddProductActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.NoActionBar.PopMe">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.product.UpdateProductActivity"
             android:exported="false"
             android:label="@string/update_product_title"
@@ -76,12 +85,12 @@
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="true">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -97,7 +106,8 @@
         </activity>
         <activity
             android:name=".ui.home.scanner.BarcodeScannerActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar.PopMe">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -113,11 +123,11 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.HealthyFoodScanner.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
             <meta-data
                 android:name="android.app.lib_name"

@@ -21,7 +21,7 @@
             app:helperTextEnabled="false"
             app:helperText="Required*"
             app:counterEnabled="true"
-            app:counterMaxLength="12"
+            app:counterMaxLength="13"
             app:helperTextTextColor="@color/red"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_photo_camera"
@@ -35,7 +35,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet_barcode_update"
-                android:maxLength="13"
+                android:maxLength="14"
                 android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

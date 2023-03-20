@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kas.healthyfoodscanner.R;
+import com.kas.healthyfoodscanner.ui.home.scanner.ResultScanActivity;
 
 import java.util.List;
 
@@ -46,6 +47,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             intent.putExtra("barcode", barcode.get(position));
             context.startActivity(intent);
         });
+        holder.detailsIv.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ResultScanActivity.class);
+            intent.putExtra("barcode", barcode.get(position));
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -60,6 +66,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         TextView company_name_search_tv;
         LinearLayout linearLayout;
         ImageView imageView;
+        ImageView detailsIv;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,7 +74,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             this.product_name_search_tv = itemView.findViewById(R.id.product_name_search_tv);
             this.company_name_search_tv = itemView.findViewById(R.id.company_name_search_tv);
             this.linearLayout = itemView.findViewById(R.id.product_layout);
-            this.imageView = itemView.findViewById(R.id.imageView2);
+            this.imageView = itemView.findViewById(R.id.update_iv);
+            this.detailsIv = itemView.findViewById(R.id.details_iv);
         }
     }
 }

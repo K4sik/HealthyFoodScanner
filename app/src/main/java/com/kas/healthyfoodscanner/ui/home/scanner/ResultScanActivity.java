@@ -2,6 +2,7 @@ package com.kas.healthyfoodscanner.ui.home.scanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 import com.kas.healthyfoodscanner.R;
 import com.kas.healthyfoodscanner.ui.database.DatabaseHelper;
+import com.kas.healthyfoodscanner.ui.home.PopUpAddProductActivity;
+import com.kas.healthyfoodscanner.ui.product.AddProductActivity;
 
 public class ResultScanActivity extends AppCompatActivity {
 
@@ -79,11 +82,11 @@ public class ResultScanActivity extends AppCompatActivity {
         carbohydratesIv = findViewById(R.id.carbohydrates_iv);
         checkProductButton = findViewById(R.id.check_product_button);
 
-//        Bundle extras = getIntent().getExtras();
-//
-//        if (extras != null) {
-//            String barcode = extras.getString("barcode");
-            String barcode = "987654321098";
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            String barcode = extras.getString("barcode");
+//            String barcode = "987654321098";
 //            String barcode = "4823000913691";
 
             databaseHelper = new DatabaseHelper(ResultScanActivity.this);
@@ -92,8 +95,8 @@ public class ResultScanActivity extends AppCompatActivity {
             cursor.moveToFirst();
 
             if (cursor.getCount() == 0){
-                Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
-                System.out.println("Company name = No data");
+                Toast.makeText(this, "No data.", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ResultScanActivity.this, PopUpAddProductActivity.class));
             } else {
                 barcodeTv.setText(barcode);
 //                companyNameTv.setText(cursor.getString(1));
@@ -185,9 +188,9 @@ public class ResultScanActivity extends AppCompatActivity {
 
             }
 
-//        } else {
-//            Toast.makeText(ResultScanActivity.this, "Barcode not found", Toast.LENGTH_SHORT).show();
-//        }
+        } else {
+            Toast.makeText(ResultScanActivity.this, "Barcode not found", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
