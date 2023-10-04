@@ -108,6 +108,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_product_name" />
 
+        <Button
+            android:id="@+id/button_ingredients_capture"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:text="Capture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_description"
             android:layout_width="match_parent"
@@ -126,7 +139,8 @@
             app:startIconDrawable="@drawable/ic_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_view">
+            app:layout_constraintTop_toBottomOf="@id/button_ingredients_capture"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet_description"
@@ -287,33 +301,20 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <LinearLayout
-            android:id="@+id/linear_button_holder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1"
+            android:text="Save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_carbohydrates">
+            app:layout_constraintTop_toBottomOf="@id/til_carbohydrates" />
 
-            <Button
-                android:id="@+id/button_capture"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:text="Capture" />
 
-            <Button
-                android:id="@+id/button_save"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:text="Save" />
-        </LinearLayout>
 
 
 

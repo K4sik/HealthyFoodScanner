@@ -38,7 +38,7 @@ public class AddProductActivity extends AppCompatActivity {
 
     private static final int REQUEST_CAMERA_CODE = 100;
 
-    private Button buttonCapture;
+    private Button buttonIngredientsCapture;
 
     private Button buttonSave;
 
@@ -197,12 +197,12 @@ public class AddProductActivity extends AppCompatActivity {
             }, REQUEST_CAMERA_CODE);
         } else {
 
-            buttonCapture = findViewById(R.id.button_capture);
-            buttonCapture.setOnClickListener(new View.OnClickListener() {
+            buttonIngredientsCapture = findViewById(R.id.button_ingredients_capture);
+            buttonIngredientsCapture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
-//                    buttonCapture.setText("Retake");
+                    buttonIngredientsCapture.setText("Retake");
 //                    buttonSave.setVisibility(View.VISIBLE);
                     CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(AddProductActivity.this);
                 }
@@ -270,7 +270,7 @@ public class AddProductActivity extends AppCompatActivity {
                 stringBuilder.append("\n");
             }
             textInputEditTextDescription.setText(stringBuilder.toString());
-            buttonCapture.setText("Retake");
+            buttonIngredientsCapture.setText("Retake");
             buttonSave.setVisibility(View.VISIBLE);
         }
     }
