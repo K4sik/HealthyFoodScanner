@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/product_layout"
+    android:clickable="true"
+    android:duplicateParentState="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        android:background="@drawable/border">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ProductName"
+                android:textColor="@color/green_product_title"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15px"/>
+
+            <ImageView
+                android:id="@+id/listItemImgMain"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="35px"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/listItemImgMain"
+                android:layout_alignBottom="@+id/listItemImgMain"
+                android:layout_toEndOf="@+id/listItemImgMain"
+                android:orientation="vertical"
+                android:layout_margin="35px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/listItemImgMain"
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                <TableLayout
+                    android:id="@+id/tablelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/table_head_id"
+                            android:text="In 100g of product:"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/table_row_whites_id"
+                            android:padding="3dip"
+                            android:text="Whites - "
+                            android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/table_row_fats_id"
+                            android:padding="3dip"
+                            android:text="Fats - "
+                            android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/table_row_carbohydrates_id"
+                            android:padding="3dip"
+                            android:text="Сarbohydrates - "
+                            android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/table_row_caloric_id"
+                            android:padding="3dip"
+                            android:text="Caloric content - "
+                            android:textColor="@color/black" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:id="@+id/baseline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15px"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+                tools:layout_editor_absoluteX="12dp" />
+
+            <TextView
+                android:id="@+id/barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25px"
+                android:text="Barcode: "
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/baseline" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
