@@ -10,11 +10,12 @@ public class SearchItem {
     private String carbohydrates;
     private String calories;
     private String additives;
+    private String detailUrl;
 
     public SearchItem() {
     }
 
-    public SearchItem(String barcode, String imgUrl, String productName, String whites, String fats, String carbohydrates, String calories, String additives) {
+    public SearchItem(String barcode, String imgUrl, String productName, String whites, String fats, String carbohydrates, String calories, String additives, String detailUrl) {
         this.barcode = barcode;
         this.imgUrl = imgUrl;
         this.productName = productName;
@@ -23,6 +24,7 @@ public class SearchItem {
         this.carbohydrates = carbohydrates;
         this.calories = calories;
         this.additives = additives;
+        this.detailUrl = detailUrl;
     }
 
     public String getBarcode() {
@@ -87,5 +89,13 @@ public class SearchItem {
 
     public void setAdditives(String additives) {
         this.additives = additives;
+    }
+
+    public String getDetailUrl() {
+        return detailUrl;
+    }
+
+    public void setDetailUrl(String detailUrl) {
+        this.detailUrl = detailUrl;
     }
 }

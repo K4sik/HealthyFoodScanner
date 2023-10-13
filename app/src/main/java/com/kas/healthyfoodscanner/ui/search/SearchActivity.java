@@ -131,6 +131,13 @@ public class SearchActivity extends AppCompatActivity {
                             .eq(i)
                             .text();
 
+                    String detailUrl = data.select("div.product-big-card")
+                            .select("a")
+                            .eq(i)
+                            .attr("href");
+
+                    String detailedUrl = "https://bscanner.com.ua/" + barcode.substring(10);
+
                     String deleteFromString = "Харчові добавки Е ";
                     String cleanAdditives;
                     if (additives.contains(deleteFromString)) {
@@ -147,14 +154,16 @@ public class SearchActivity extends AppCompatActivity {
                             fats.substring(7, fats.length() - 2),
                             carbohydrates.substring(12, carbohydrates.length() - 2),
                             calories.substring(15, calories.length() - 5),
-                            cleanAdditives));
+                            cleanAdditives,
+                            detailedUrl));
                     Log.d("items", "img: " + imgUrl + " . title: " + productName
                             + ", Whites: " + whites.substring(8, whites.length() - 2)
                             + ", Fats: " + fats.substring(7, fats.length() - 2)
                             + ", Carbohydrates: " + carbohydrates.substring(12, carbohydrates.length() - 2)
                             + ", Calories: " + calories.substring(15, calories.length() - 5)
                             + ", barcode: " + barcode.substring(10)
-                            + ", additives: " + cleanAdditives);
+                            + ", additives: " + cleanAdditives
+                            + ", url: " + detailedUrl);
                 }
 
             } catch (IOException e) {
