@@ -39,10 +39,10 @@ public class HomeFragment extends Fragment {
         tiet_search = root.findViewById(R.id.tiet_search);
 
         List<Page> pageList = new ArrayList<>();
-        pageList.add(new Page(R.drawable.camera, "Scan Barcode", R.drawable.ic_arrow_right));
-        pageList.add(new Page(R.drawable.map, "Add new Product", R.drawable.ic_arrow_right));
-        pageList.add(new Page(R.drawable.person, "Profile", R.drawable.ic_arrow_right));
-        pageList.add(new Page(R.drawable.ic_shopping_cart, "Product", R.drawable.ic_arrow_right));
+        pageList.add(new Page(R.drawable.camera, "Сканувати штрих-код", R.drawable.ic_arrow_right));
+        pageList.add(new Page(R.drawable.ic_shopping_cart, "Добавити новий продукт", R.drawable.ic_arrow_right));
+        pageList.add(new Page(R.drawable.person, "Мій профіль", R.drawable.ic_arrow_right));
+//        pageList.add(new Page(R.drawable.ic_shopping_cart, "Product", R.drawable.ic_arrow_right));
 
         RecyclerView recyclerView = root.findViewById(R.id.home_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
