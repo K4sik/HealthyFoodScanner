@@ -22,9 +22,13 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.scanner.ResScanActivity"
-            android:label="@string/result_by_barcode"
+            android:name=".ui.profile.ProfileActivity"
             android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.home.scanner.ResScanActivity"
+            android:exported="false"
+            android:label="@string/result_by_barcode"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.home.PopUpAddProductActivity"

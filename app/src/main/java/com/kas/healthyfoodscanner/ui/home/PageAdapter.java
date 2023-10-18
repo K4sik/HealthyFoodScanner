@@ -18,6 +18,7 @@ import com.kas.healthyfoodscanner.ui.home.scanner.ResScanActivity;
 import com.kas.healthyfoodscanner.ui.product.AddProductActivity;
 import com.kas.healthyfoodscanner.ui.home.scanner.ResultScanActivity;
 import com.kas.healthyfoodscanner.ui.product.ProductActivity;
+import com.kas.healthyfoodscanner.ui.profile.ProfileActivity;
 
 import java.util.List;
 
@@ -83,7 +84,7 @@ public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder>{
                     break;
 
                 case 2:
-                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=QTB1YiWxxKU&ab_channel=BenLionelScott"));
+                    intent = new Intent(context, ProfileActivity.class);
                     break;
 
                 case 3:
