@@ -149,10 +149,10 @@ public class SearchActivity extends AppCompatActivity {
                             barcode.substring(10),
                             imgUrl,
                             productName,
-                            whites.substring(8, whites.length() - 2),
-                            fats.substring(7, fats.length() - 2),
-                            carbohydrates.substring(12, carbohydrates.length() - 2),
-                            calories.substring(15, calories.length() - 5),
+                            whites,//.substring(8, whites.length() - 2),
+                            fats,//.substring(7, fats.length() - 2),
+                            carbohydrates,//.substring(12, carbohydrates.length() - 2),
+                            calories,//.substring(15, calories.length() - 5),
                             cleanAdditives,
                             "4823036503002"));
                     Log.d("items", "img: " + imgUrl + " . title: " + productName

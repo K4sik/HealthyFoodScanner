@@ -70,7 +70,7 @@
 
                         <TextView
                             android:id="@+id/table_head_id"
-                            android:text="In 100g of product:"
+                            android:text="100г продукту містить:"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -81,7 +81,7 @@
                         <TextView
                             android:id="@+id/table_row_whites_id"
                             android:padding="3dip"
-                            android:text="Whites - "
+                            android:text=""
                             android:textColor="@color/black" />
                     </TableRow>
 
@@ -90,7 +90,7 @@
                         <TextView
                             android:id="@+id/table_row_fats_id"
                             android:padding="3dip"
-                            android:text="Fats - "
+                            android:text=""
                             android:textColor="@color/black" />
                     </TableRow>
 
@@ -99,7 +99,7 @@
                         <TextView
                             android:id="@+id/table_row_carbohydrates_id"
                             android:padding="3dip"
-                            android:text="Сarbohydrates - "
+                            android:text=""
                             android:textColor="@color/black" />
                     </TableRow>
 
@@ -108,7 +108,7 @@
                         <TextView
                             android:id="@+id/table_row_caloric_id"
                             android:padding="3dip"
-                            android:text="Caloric content - "
+                            android:text=""
                             android:textColor="@color/black" />
                     </TableRow>
                 </TableLayout>
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="25px"
-                android:text="Barcode: "
+                android:text="Штрих-код: "
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="25px"
-                android:text="Additives: "
+                android:text="Харчові добавки: "
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

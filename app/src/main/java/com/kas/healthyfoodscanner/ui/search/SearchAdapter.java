@@ -37,15 +37,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull SearchAdapter.MyViewHolder holder, int position) {
         SearchItem searchItem = searchItems.get(position);
-        holder.barcode_tv.setText("Barcode: " + searchItem.getBarcode());
+        holder.barcode_tv.setText("Штрих-код: " + searchItem.getBarcode());
         holder.product_name_tv.setText(searchItem.getProductName());
-        holder.table_row_whites_id.setText("Whites - " + searchItem.getWhites() + "g");
-        holder.table_row_fats_id.setText("Fats - " + searchItem.getFats() + "g");
-        holder.table_row_carbohydrates_id.setText("Carbohydrates - " + searchItem.getCarbohydrates() + "g");
-        holder.table_row_caloric_id.setText("Calories - " + searchItem.getCalories() + "kcal");
+        holder.table_row_whites_id.setText(searchItem.getWhites());
+        holder.table_row_fats_id.setText(searchItem.getFats());
+        holder.table_row_carbohydrates_id.setText(searchItem.getCarbohydrates());
+        holder.table_row_caloric_id.setText(searchItem.getCalories());
         if (!searchItem.getAdditives().isEmpty()){
             holder.additives_tv.setVisibility(View.VISIBLE);
-            holder.additives_tv.setText("Additives: " + searchItem.getAdditives());
+            holder.additives_tv.setText("Харчові добавки: " + searchItem.getAdditives());
         } else {
             holder.additives_tv.setVisibility(View.INVISIBLE);
         }
