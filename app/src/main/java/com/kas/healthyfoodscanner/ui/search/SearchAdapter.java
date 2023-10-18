@@ -1,6 +1,7 @@
 package com.kas.healthyfoodscanner.ui.search;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kas.healthyfoodscanner.R;
+import com.kas.healthyfoodscanner.ui.home.scanner.ResultScanActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -55,7 +57,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         return searchItems.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView barcode_tv;
         ImageView product_item_img_iv;
@@ -76,7 +78,17 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
             table_row_carbohydrates_id = itemView.findViewById(R.id.table_row_carbohydrates_id);
             table_row_caloric_id = itemView.findViewById(R.id.table_row_caloric_id);
             additives_tv = itemView.findViewById(R.id.additives_tv);
+            itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            SearchItem searchItem = searchItems.get(position);
+
+//            Intent intent = new Intent(context, 9kasbActivity.class);
+//            intent.putExtra();
+//            context.startActivity(intent);
+        }
     }
 }

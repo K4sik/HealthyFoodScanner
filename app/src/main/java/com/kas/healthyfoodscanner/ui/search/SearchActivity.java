@@ -76,7 +76,6 @@ public class SearchActivity extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
 
             try {
-//                String url = "https://www.cinemaqatar.com/";
                 String url = "https://uk.dobavkam.net/food";
 
                 Document doc = Jsoup.connect(url).get();
@@ -155,7 +154,7 @@ public class SearchActivity extends AppCompatActivity {
                             carbohydrates.substring(12, carbohydrates.length() - 2),
                             calories.substring(15, calories.length() - 5),
                             cleanAdditives,
-                            detailedUrl));
+                            "4823036503002"));
                     Log.d("items", "img: " + imgUrl + " . title: " + productName
                             + ", Whites: " + whites.substring(8, whites.length() - 2)
                             + ", Fats: " + fats.substring(7, fats.length() - 2)
