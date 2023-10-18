@@ -43,7 +43,8 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(BarcodeScannerActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(BarcodeScannerActivity.this, ResultScanActivity.class);
+//                            Intent intent = new Intent(BarcodeScannerActivity.this, ResultScanActivity.class);
+                            Intent intent = new Intent(BarcodeScannerActivity.this, ResScanActivity.class);
                             intent.putExtra("barcode", result.getText());
                             startActivity(intent);
                         }

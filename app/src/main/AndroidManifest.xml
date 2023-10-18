@@ -22,6 +22,11 @@
         android:theme="@style/Theme.HealthyFoodScanner"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.scanner.ResScanActivity"
+            android:label="@string/result_by_barcode"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".ui.home.PopUpAddProductActivity"
             android:exported="false"
             android:label=""
@@ -86,12 +91,12 @@
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="true">
 
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
             <meta-data
                 android:name="android.app.lib_name"

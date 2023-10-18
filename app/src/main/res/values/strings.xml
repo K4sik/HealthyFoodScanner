@@ -30,4 +30,11 @@
     <string name="search">Search</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="barcode">"Штрих-коди: "</string>
+    <string name="country_code">Країна, де зареєстрований штрих-код: </string>
+    <string name="address">Адреса виробництва: </string>
+    <string name="product_name">Назва продукту</string>
+    <string name="ingredients">Інгредієнти: </string>
+    <string name="nutrition">"Харчові Е-добавки: "</string>
 </resources>

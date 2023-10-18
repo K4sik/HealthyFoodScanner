@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kas.healthyfoodscanner.R;
 import com.kas.healthyfoodscanner.ui.home.scanner.BarcodeScannerActivity;
+import com.kas.healthyfoodscanner.ui.home.scanner.ResScanActivity;
 import com.kas.healthyfoodscanner.ui.product.AddProductActivity;
 import com.kas.healthyfoodscanner.ui.home.scanner.ResultScanActivity;
 import com.kas.healthyfoodscanner.ui.product.ProductActivity;
@@ -73,7 +74,8 @@ public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder>{
             switch (getAdapterPosition()){
 
                 case 0:
-                    intent = new Intent(context, BarcodeScannerActivity.class);
+//                    intent = new Intent(context, BarcodeScannerActivity.class);
+                    intent = new Intent(context, ResScanActivity.class);
                     break;
 
                 case 1:
